@@ -1,11 +1,9 @@
 const db = require('../db')
-const { Publisher, Book } = require('../models')
+const { Book } = require('./models')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-  const penguinBooks = await Publisher.find({ name: 'Penguin Books' })
-  const harperCollins = await Publisher.find({ name: 'HarperCollins' })
 
   const books = [
     {
