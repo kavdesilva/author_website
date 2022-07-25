@@ -7,11 +7,11 @@ const User = new Schema(
         bookshelf: [
           {
             shelfName: 'Favorites',
-            books: [{ type: Schema.Types.ObjectId, ref: 'book_id'}] // array goes here
+            books: [{ type: Schema.Types.ObjectId, ref: 'Book'}] // array goes here
           },
           {
             shelfName: 'Want to Read',
-            books: [{ type: Schema.Types.ObjectId, ref: 'book_id'}] // array goes here
+            books: [{ type: Schema.Types.ObjectId, ref: 'Book'}] // array goes here
           }
         ]
     }
