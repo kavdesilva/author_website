@@ -6,12 +6,10 @@ const User = new Schema(
         password: { type: String, required: true },
         bookshelf: [
           {
-            shelfName: 'Favorites',
-            books: [{ type: Schema.Types.ObjectId, ref: 'Book'}] // array goes here
+            favBooks: [{ type: Schema.Types.ObjectId, ref: 'Book'}] // array goes here
           },
           {
-            shelfName: 'Want to Read',
-            books: [{ type: Schema.Types.ObjectId, ref: 'Book'}] // array goes here
+            wantBooks: [{ type: Schema.Types.ObjectId, ref: 'Book'}] // array goes here
           }
         ]
     }
