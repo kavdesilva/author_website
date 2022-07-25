@@ -30,15 +30,15 @@
 ***
 
 ### *Wireframes*
-#### Home Page(https://wireframe.cc/EdV80K)
+#### Home Page(url)
 ![Image]()
-#### Author Page(https://wireframe.cc/sDSugC)
+#### Author Page(url)
 ![Image]()
-#### Books Page(https://wireframe.cc/sDSugC)
+#### Books Page(url)
 ![Image]()
-#### Book Details Page(https://wireframe.cc/sDSugC)
+#### Book Details Page(url)
 ![Image]()
-#### Bookshelf Page(https://wireframe.cc/sDSugC)
+#### Bookshelf Page(url)
 ![Image]()
 
 ***
