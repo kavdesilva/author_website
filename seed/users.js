@@ -8,13 +8,10 @@ const main = async () => {
     {
       userName: '',
       password: '',
+      email: '',
       bookshelf: [
-        {
-          favBooks: [book[0]._id, book[1]._id, book[2]._id] // array goes here
-        },
-        {
-          wantBooks: [book[3]._id, book[4]._id] // array goes here
-        }
+        { favBooks: [book[0]._id, book[1]._id, book[2]._id] }, // array goes here
+        { wantBooks: [book[3]._id, book[4]._id] } // array goes here
       ]
   ]
 
