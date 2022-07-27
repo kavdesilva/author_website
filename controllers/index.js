@@ -14,6 +14,10 @@ const getFictionBooks = () => {
   
 }
 
+const getBookById = () => {
+  
+}
+
 const getBookshelf = () => {
   
 }
