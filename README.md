@@ -59,3 +59,5 @@
 
 ### *Credits*
 #### Inspo: [22 Children's Author & Illustrator Websites That Delight](https://rocketexpansion.com/childrens-author-websites/)
+#### More Inspo: [Shel Silverstein Official Website](https://shelsilverstien.com/)
+#### [Register and Login System in MERN Stack](https://dev.to/crackingdemon/register-and-login-system-in-mern-stack-1n98)
