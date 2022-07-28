@@ -5,9 +5,12 @@ const Nav = () => {
 
     return(
         <div>
-            <Link to="/">home</Link>
-            <Link to="/books">books</Link>
-            <Link to="/about">about</Link>
+            <nav>
+                <h4>sheila b. back | official website</h4>
+                <Link to="/">home</Link>
+                <Link to="/books">books</Link>
+                <Link to="/about">about</Link>
+            </nav>
         </div>
     )
 
