@@ -6,6 +6,7 @@ import Home from './components/Home'
 import Books from './components/Books'
 import Fiction from './components/Fiction'
 import Poetry from './components/Poetry'
+import BookDetails from './components/BookDetails'
 import About from './components/About'
 
 // import components below
@@ -24,6 +25,7 @@ function App() {
           <Route path='/books' element= {<Books />} />
           <Route path='/books/poetry' element= {<Poetry />} />
           <Route path='/books/fiction' element= {<Fiction />} />
+          <Route path='/books/:id' element= {<BookDetails />} />
           <Route path='/about' element= {<About />} />
         </Routes>
       </main>

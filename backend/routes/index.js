@@ -39,7 +39,13 @@ router.get('/books/fiction', async(req,res) => {
     throw error}
 })
 
-// router.get('/books/:id', controllers.getBookById)
-
+router.get('/books/:id', async(req,res) => {
+  try {
+    const { id } = req.params
+    const book = await Book.findById(id)
+    res.send(book)
+  } catch (error) {
+    throw error}
+})
 
 module.exports = router;

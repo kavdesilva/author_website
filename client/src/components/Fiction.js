@@ -6,8 +6,11 @@ const Fiction = () => {
     return(
         <div>
             <h1>books</h1>
-            <p>fiction</p>
-            <Link to="/books/poetry">poetry</Link>
+            <div className='books-nav'>
+                <Link to="/books" className='nav-vertical-divider'>all</Link>
+                <p className='nav-vertical-divider'>fiction</p>
+                <Link to="/books/poetry">poetry</Link>
+            </div>
         </div>
     )
 

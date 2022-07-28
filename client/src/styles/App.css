@@ -2,7 +2,10 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.books-nav {
+  margin: 0 auto;
+}
+
+.nav-vertical-divider {
+  border-right: 1px solid black;
 }
