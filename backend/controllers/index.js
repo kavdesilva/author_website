@@ -1,4 +1,4 @@
-const { Book, User } = require('..models')
+const { Book, User } = require('../models')
 
 // functions for data retrieval, form inputs, etc. go below.
 
@@ -7,7 +7,7 @@ const getAllBooks = async(req,res) => {
     const books = await Book.find()
     return books
   } catch (error) {
-    return }
+    throw error}
 }
 
 const getPoetryBooks = () => {
@@ -41,3 +41,5 @@ const getFavBooks = () => {
 const getWantBooks = () => {
   
 }
+
+module.exports = {getAllBooks}

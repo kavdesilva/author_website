@@ -1,6 +1,7 @@
+const mongoose = require('mongoose')
 const { model } = require('mongoose')
-const BookSchema = require('./books')
-const UserSchema = require('./users')
+const BookSchema = require('./book')
+const UserSchema = require('./user')
 
 const Book = model('Book', BookSchema)
 const User = model('User', UserSchema)
