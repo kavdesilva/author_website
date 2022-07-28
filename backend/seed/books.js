@@ -28,13 +28,13 @@ const main = async () => {
         title: 'waltzing walruses',
         datePublished: '2001',
         description: `another collection of poems from the author who brought you 'flight of the rhinoceros'`,
-        genre: ''
+        genre: 'poetry'
     },
     {
         title: 'flamingo, flamenco',
         datePublished: '2004',
         description: `dance and the natural world meet again in this collection of poems by the author of 'flight of the rhinoceros' and 'waltzing walruses'`,
-        genre: ''
+        genre: 'poetry'
     }
   ]
   await Book.insertMany(books)
