@@ -7,39 +7,34 @@ const main = async () => {
 
   const books = [
     {
-        title: '',
-        datePublished: '',
-        description: '',
-        genre: ['','',''], 
-        id: ''
+        title: 'red is the rabbit',
+        datePublished: '1995',
+        description: 'fluffy bunny meets bushel of raspberries.',
+        genre: 'fiction'
     },
     {
-        title: '',
-        datePublished: '',
-        description: '',
-        genre: ['','',''], 
-        id: ''
+        title: 'dish and spoon: a love story',
+        datePublished: '1998',
+        description: 'a forbidden romance between cutlery who should never have met.',
+        genre: 'fiction'
     },
     {
-        title: '',
-        datePublished: '',
-        description: '',
-        genre: ['','',''], 
-        id: ''
+        title: 'flight of the rhinoceros and other poems',
+        datePublished: '1996',
+        description: 'a collection of poems capturing the magic of movement in the wild',
+        genre: 'poetry'
     },
     {
-        title: '',
-        datePublished: '',
-        description: '',
-        genre: ['','',''], 
-        id: ''
+        title: 'waltzing walruses',
+        datePublished: '2001',
+        description: `another collection of poems from the author who brought you 'flight of the rhinoceros'`,
+        genre: ''
     },
     {
-        title: '',
-        datePublished: '',
-        description: '',
-        genre: ['','',''], 
-        id: ''
+        title: 'flamingo, flamenco',
+        datePublished: '2004',
+        description: `dance and the natural world meet again in this collection of poems by the author of 'flight of the rhinoceros' and 'waltzing walruses'`,
+        genre: ''
     }
   ]
   await Book.insertMany(books)

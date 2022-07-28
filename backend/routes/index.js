@@ -3,9 +3,9 @@ const { Book } = require('../models')
 const controllers = require('../controllers')
 const router = Router();
 
-// router.get('/', (req, res) => {
-//   res.send({ msg: 'server running' })
-// })// homepage = '/home'
+router.get('/', (req, res) => {
+  res.send({ msg: 'server running' })
+})
 
 // router.post('/bookshelf', controllers.addFavBook, controllers.addWantBook) // this probably has to be two different routes?
 
@@ -15,7 +15,7 @@ const router = Router();
 
 // router.get('/bookshelf/wantBooks', controllers.getWantBooks)
 
-router.get('/', async(req,res) => {
+router.get('/books', async(req,res) => {
   try {
     const books = await Book.find()
     res.send(books)
@@ -23,9 +23,21 @@ router.get('/', async(req,res) => {
     throw error}
 })
 
- // router.get('/books/poetry', controllers.getPoetryBooks)
+ router.get('/books/poetry', async(req,res) => {
+  try {
+    const poetryBooks = await Book.find({genre: 'poetry'})
+    res.send(poetryBooks)
+  } catch (error) {
+    throw error}
+})
 
-// router.get('/books/fiction', controllers.getFictionBooks)
+router.get('/books/fiction', async(req,res) => {
+  try {
+    const fictionBooks = await Book.find({genre: 'fiction'})
+    res.send(fictionBooks)
+  } catch (error) {
+    throw error}
+})
 
 // router.get('/books/:id', controllers.getBookById)
 
