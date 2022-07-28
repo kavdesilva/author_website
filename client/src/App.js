@@ -24,7 +24,7 @@ function App() {
           <Route path='/books' element= {<Books />} />
           <Route path='/books/poetry' element= {<Poetry />} />
           <Route path='/books/fiction' element= {<Fiction />} />
-          <Route path='/books/about' element= {<About />} />
+          <Route path='/about' element= {<About />} />
         </Routes>
       </main>
     </div>
