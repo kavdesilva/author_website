@@ -5,7 +5,7 @@ const Nav = () => {
 
     return(
         <div>
-            <nav>
+            <nav className='main-nav'>
                 <h4>sheila b. back | official website</h4>
                 <Link to="/" className='nav-vertical-divider'>home</Link>
                 <Link to="/books" className='nav-vertical-divider'>books</Link>

@@ -2,10 +2,11 @@
   text-align: center;
 }
 
-.books-nav {
-  margin: 0 auto;
+a, .books-nav, .genre-select {
+  display: inline-block;
+  padding: 0 10px;
 }
 
 .nav-vertical-divider {
-  border-right: 1px solid black;
+  border-right: 2px solid black;
 }

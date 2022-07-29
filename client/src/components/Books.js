@@ -1,28 +1,32 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
-import { BASE_URL } from '../globals'
+import { Link, useNavigate } from 'react-router-dom'
 
-const Books = () => {
+const Books = (props) => {
 
-    const [books, setBooks] = useState([])
+    // let navigate = useNavigate()
 
-    useEffect(() => {
-        async function getBooks() {
-            const res = await axios.get(`${BASE_URL}/books`)
-            console.log(res)
-            setBooks(res.data.books)
-        }
-        getBooks()
-    }, [])
+    // const selectBook = (book) => {
+    //     navigate(`/books/${book.id}`)
+    // }
 
     return(
         <div>
             <h1>books</h1>
             <div className='books-nav'>
-                <p className='nav-vertical-divider'>all</p>
                 <Link to="/books/fiction" className='nav-vertical-divider'>fiction</Link>
                 <Link to="/books/poetry">poetry</Link>
+            </div>
+            <div className="books-container">
+                {
+                    props.books.map((book) => (
+                        <div key={book.id} className="book-card">
+                            <h3>'{book.title}'</h3>
+                            <p>published: {book.datePublished}</p>
+                            <p>description: {book.description}</p>
+                            <p>genre: {book.genre}</p>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
