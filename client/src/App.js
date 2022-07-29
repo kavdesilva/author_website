@@ -47,18 +47,33 @@ function App() {
     getFictionBooks()
   }, [])
 
+  useEffect(() => {
+    async function getUser() {
+      const res = await axios.get(`${BASE_URL}/user`)
+      setUser(res.data)
+    }
+    getUser()
+  }, [])
 
 
   // useEffect(() => {
   //   async function getFavBooks() {
   //       const res = await axios.get(`${BASE_URL}/user`)
-  //       setFictionBooks(res.data.)
+  //       setFictionBooks(res.data.bookshelf.favBooks)
   //   }
   //   getFavBooks()
   // }, [])
 
+  // useEffect(() => {
+  //   async function getWantBooks() {
+  //       const res = await axios.get(`${BASE_URL}/user`)
+  //       setFictionBooks(res.data.bookshelf.wantBooks)
+  //   }
+  //   getWantBooks()
+  // }, [])
+
   console.log(books)
-  // console.log(user)
+  console.log(user)
 
   return (
     <div className="App">
