@@ -2,13 +2,13 @@ const { Book, User } = require('../models')
 
 // functions for data retrieval, form inputs, etc. go below.
 
-const getAllBooks = async(req,res) => {
-  try {
-    const books = await Book.find()
-    return books
-  } catch (error) {
-    throw error}
-}
+// const getAllBooks = async(req,res) => {
+//   try {
+//     const books = await Book.find()
+//     return books
+//   } catch (error) {
+//     throw error}
+// }
 
 const getPoetryBooks = () => {
   
@@ -22,7 +22,7 @@ const getBookById = () => {
   
 }
 
-const getBookshelf = () => {
+const getUser = () => {
   
 }
 
@@ -42,4 +42,4 @@ const getWantBooks = () => {
   
 }
 
-module.exports = {getAllBooks}
+// module.exports = {getAllBooks}

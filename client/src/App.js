@@ -8,7 +8,7 @@ import Home from './components/Home'
 import Books from './components/Books'
 import Fiction from './components/Fiction'
 import Poetry from './components/Poetry'
-import BookDetails from './components/BookDetails'
+import Bookshelf from './components/Bookshelf'
 import About from './components/About'
 
 // import components below
@@ -19,6 +19,9 @@ function App() {
   const [books, setBooks] = useState([])
   const [poetryBooks, setPoetryBooks] = useState([])
   const [fictionBooks, setFictionBooks] = useState([])
+  const [user, setUser] = useState([])
+  const [favBooks, setFavBooks] = useState([])
+  const [wantBooks, setWantBooks] = useState([])
 
   useEffect(() => {
     async function getBooks() {
@@ -44,7 +47,18 @@ function App() {
     getFictionBooks()
   }, [])
 
+
+
+  // useEffect(() => {
+  //   async function getFavBooks() {
+  //       const res = await axios.get(`${BASE_URL}/user`)
+  //       setFictionBooks(res.data.)
+  //   }
+  //   getFavBooks()
+  // }, [])
+
   console.log(books)
+  // console.log(user)
 
   return (
     <div className="App">
@@ -57,8 +71,8 @@ function App() {
           <Route path='/books' element= {<Books books={books} />} />
           <Route path='/books/poetry' element= {<Poetry poetryBooks={poetryBooks}/>} />
           <Route path='/books/fiction' element= {<Fiction fictionBooks={fictionBooks}/>} />
-          <Route path='/books/:id' element= {<BookDetails />} />
           <Route path='/about' element= {<About />} />
+          <Route path='/user/bookshelf' element= {<Bookshelf />} />
         </Routes>
       </main>
     </div>
