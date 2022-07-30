@@ -10,8 +10,8 @@ const main = async () => {
       password: 'password1',
       email: 'kristinaEmail@email.com',
       bookshelf: [
-        { favBooks: [] }, // array goes here
-        { wantBooks: [] } // array goes here
+        { favBooks: [book[0]._id, book[1]._id, book[2]._id] }, 
+        { wantBooks: [book[3]._id, book[4]._id] } 
       ]
     }]
 

@@ -22,6 +22,7 @@ const Poetry = (props) => {
                     ))
                 }
             </div>
+            <Link to="/books">back to all books</Link>
         </div>
     )
 

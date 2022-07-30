@@ -55,19 +55,24 @@ function App() {
     getUser()
   }, [])
 
-
   // useEffect(() => {
   //   async function getFavBooks() {
   //       const res = await axios.get(`${BASE_URL}/user`)
-  //       setFictionBooks(res.data.bookshelf.favBooks)
+  //       setFavBooks(res.data.bookshelf.favBooks)
   //   }
   //   getFavBooks()
   // }, [])
 
+  // const addFavBook = (e) => {
+  //   e.preventDefault()
+
+  // }
+  
+
   // useEffect(() => {
   //   async function getWantBooks() {
   //       const res = await axios.get(`${BASE_URL}/user`)
-  //       setFictionBooks(res.data.bookshelf.wantBooks)
+  //       setWantBooks(res.data.bookshelf.wantBooks)
   //   }
   //   getWantBooks()
   // }, [])
@@ -87,7 +92,7 @@ function App() {
           <Route path='/books/poetry' element= {<Poetry poetryBooks={poetryBooks}/>} />
           <Route path='/books/fiction' element= {<Fiction fictionBooks={fictionBooks}/>} />
           <Route path='/about' element= {<About />} />
-          <Route path='/user/bookshelf' element= {<Bookshelf />} />
+          <Route path='/user/bookshelf' element= {<Bookshelf user={user}/>} />
         </Routes>
       </main>
     </div>

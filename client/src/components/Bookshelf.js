@@ -2,7 +2,7 @@ const Bookshelf = (props) => {
 
     return(
         <div>
-            <h1>bookshelf</h1>
+            <h1>{props.user[0].userName}'s bookshelf</h1>
             <div>
                 <h3>favorites</h3>
                 <div className="fav books-container">
