@@ -6,12 +6,12 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 const main = async () => {
   const users = [
     {
-      userName: 'kristina',
+      username: 'kristina',
       password: 'password1',
       email: 'kristinaEmail@email.com',
       bookshelf: [
-        { favBooks: [book[0]._id, book[1]._id, book[2]._id] }, 
-        { wantBooks: [book[3]._id, book[4]._id] } 
+        { favBooks: [] }, 
+        { wantBooks: []} 
       ]
     }]
 

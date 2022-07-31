@@ -1,7 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Poetry = (props) => {
+
+    let navigate = useNavigate()
 
     return(
         <div>
@@ -13,11 +14,10 @@ const Poetry = (props) => {
             <div className="books-container">
                 {
                     props.poetryBooks.map((book) => (
-                        <div key={book.id} className="book-card">
+                        <div key={book._id} className="book-card">
                             <h3>{book.title}</h3>
-                            <p>published: {book.datePublished}</p>
-                            <p>description: {book.description}</p>
                             <p>genre: {book.genre}</p>
+                            <button onClick={() => navigate(`/books/${book._id}`)}>details</button>
                         </div>
                     ))
                 }
