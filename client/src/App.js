@@ -9,6 +9,7 @@ import Books from './components/Books'
 import BookDetails from './components/BookDetails'
 import Fiction from './components/Fiction'
 import Poetry from './components/Poetry'
+import Bookshelf from './components/Bookshelf'
 import About from './components/About'
 
 // import components below
@@ -19,6 +20,9 @@ function App() {
   const [books, setBooks] = useState([])
   const [poetryBooks, setPoetryBooks] = useState([])
   const [fictionBooks, setFictionBooks] = useState([])
+  const [user, setUser] = useState([])
+  // const [favBooks, setFavBooks] = useState([])
+  // const [wantBooks, setWantBooks] = useState([])
 
   useEffect(() => {
     async function getBooks() {
@@ -44,7 +48,32 @@ function App() {
     getFictionBooks()
   }, [])
 
+  useEffect(() => {
+    async function getUser() {
+      const res = await axios.get(`${BASE_URL}/user`)
+      setUser(res.data)
+    }
+    getUser()
+  }, [])
+
+  // useEffect(() => {
+  //   async function getFavBooks() {
+  //       const res = await axios.get(`${BASE_URL}/user`)
+  //       setFavBooks(res.data.bookshelf.favBooks)
+  //   }
+  //   getFavBooks()
+  // }, [])
+
+  // useEffect(() => {
+  //   async function getWantBooks() {
+  //       const res = await axios.get(`${BASE_URL}/user`)
+  //       setWantBooks(res.data.bookshelf.wantBooks)
+  //   }
+  //   getWantBooks()
+  // }, [])
+
   console.log(books)
+  console.log(user)
 
   return (
     <div className="App">
@@ -59,6 +88,7 @@ function App() {
           <Route path='/books/poetry' element= {<Poetry poetryBooks={poetryBooks}/>} />
           <Route path='/books/fiction' element= {<Fiction fictionBooks={fictionBooks}/>} />
           <Route path='/about' element= {<About />} />
+          <Route path='/user/bookshelf' element= {<Bookshelf user={user}/>} />
         </Routes>
       </main>
     </div>

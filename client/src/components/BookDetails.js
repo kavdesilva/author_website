@@ -22,7 +22,7 @@ const BookDetails = () => {
     return(
         <div>
             <div>
-                <h3>'{book.title}'</h3>
+                <h2>'{book.title}'</h2>
                 <div className="book-container">
                     <p>published: {book.datePublished}</p>
                     <p>description: {book.description}</p>

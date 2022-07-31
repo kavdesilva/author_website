@@ -9,7 +9,8 @@ const Nav = () => {
                 <h3>sheila b. bach | official website</h3>
                 <Link to="/" className='nav-vertical-divider'>home</Link>
                 <Link to="/books" className='nav-vertical-divider'>books</Link>
-                <Link to="/about">about</Link>
+                <Link to="/about" className='nav-vertical-divider'>about</Link>
+                <Link to="/user/bookshelf">bookshelf</Link>
             </nav>
         </div>
     )
