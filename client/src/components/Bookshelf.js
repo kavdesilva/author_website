@@ -9,12 +9,13 @@ const Bookshelf = (props) => {
                 <h3>favorites</h3>
                 <div className="fav books-container">
                 {
-                    currentUser.favBooks.map((book) => (
-                        <div key={book.id} className="book-card">
+                    currentUser.favBooks.map((book, index) => (
+                        <div key={book._id} className="book-card">
                             <h3>'{book.title}'</h3>
                             <p>published: {book.datePublished}</p>
                             <p>description: {book.description}</p>
                             <p>genre: {book.genre}</p>
+                            <button onClick={() => currentUser.favBooks.splice(index)}>remove from favorites</button>
                         </div>
                     ))
                 }
@@ -24,12 +25,14 @@ const Bookshelf = (props) => {
                 <h3>wishlist</h3>
                 <div className="want books-container">
                 {
-                    currentUser.wantBooks.map((book) => (
-                        <div key={book.id} className="book-card">
+                    currentUser.wantBooks.map((book, index) => (
+                        <div key={book._id} className="book-card">
                             <h3>'{book.title}'</h3>
                             <p>published: {book.datePublished}</p>
                             <p>description: {book.description}</p>
                             <p>genre: {book.genre}</p>
+                            <button>remove from wishlist</button>
+                            <button onClick={() => currentUser.wantBooks.splice(index)}>remove from favorites</button>
                         </div>
                     ))
                 }
