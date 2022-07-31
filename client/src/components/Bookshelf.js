@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom"
+import BookshelfNote from "./BookshelfNote"
+
 const Bookshelf = (props) => {
 
     let currentUser = props.user[0]
@@ -27,7 +29,9 @@ const Bookshelf = (props) => {
                             <p>published: {book.datePublished}</p>
                             <p>description: {book.description}</p>
                             <p>genre: {book.genre}</p>
-                            <button onClick={() => {currentUser.favBooks.splice(index); confirmFavRemove()}}>remove from favorites</button>
+                            <button onClick={() => {currentUser.favBooks.splice(index); confirmFavRemove()}}>remove</button>
+                            <button>add note</button>
+                            <BookshelfNote />
                         </div>
                     ))
                 }
@@ -43,7 +47,8 @@ const Bookshelf = (props) => {
                             <p>published: {book.datePublished}</p>
                             <p>description: {book.description}</p>
                             <p>genre: {book.genre}</p>
-                            <button onClick={() => {currentUser.wantBooks.splice(index); confirmWantRemove()}}>remove from wishlist</button>
+                            <button onClick={() => {currentUser.wantBooks.splice(index); confirmWantRemove()}}>remove</button>
+                            <button>add note</button>
                         </div>
                     ))
                 }

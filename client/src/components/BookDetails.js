@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from '../globals'
+import BookReview from './BookReview'
 
 const BookDetails = () => {
 
@@ -26,7 +27,9 @@ const BookDetails = () => {
                 <div className="book-container">
                     <p>published: {book.datePublished}</p>
                     <p>description: {book.description}</p>
+                    <button>add review</button>
                 </div>
+                <BookReview />
             </div>
         </div>
     )
