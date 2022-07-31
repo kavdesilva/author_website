@@ -1,6 +1,18 @@
+import { useNavigate } from "react-router-dom"
 const Bookshelf = (props) => {
 
     let currentUser = props.user[0]
+    let navigate = useNavigate()
+
+    const confirmFavRemove = () => {
+        window.confirm('are you sure you want to remove this book from your favorites?')
+        navigate('/user/bookshelf')
+    }
+
+    const confirmWantRemove = () => {
+        window.confirm('are you sure you want to remove this book from your wishlist?')
+        navigate('/user/bookshelf')
+    }
 
     return(
         <div>
@@ -15,7 +27,7 @@ const Bookshelf = (props) => {
                             <p>published: {book.datePublished}</p>
                             <p>description: {book.description}</p>
                             <p>genre: {book.genre}</p>
-                            <button onClick={() => currentUser.favBooks.splice(index)}>remove from favorites</button>
+                            <button onClick={() => {currentUser.favBooks.splice(index); confirmFavRemove()}}>remove from favorites</button>
                         </div>
                     ))
                 }
@@ -31,8 +43,7 @@ const Bookshelf = (props) => {
                             <p>published: {book.datePublished}</p>
                             <p>description: {book.description}</p>
                             <p>genre: {book.genre}</p>
-                            <button>remove from wishlist</button>
-                            <button onClick={() => currentUser.wantBooks.splice(index)}>remove from favorites</button>
+                            <button onClick={() => {currentUser.wantBooks.splice(index); confirmWantRemove()}}>remove from wishlist</button>
                         </div>
                     ))
                 }

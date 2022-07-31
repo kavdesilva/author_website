@@ -19,8 +19,8 @@ const Books = (props) => {
                             <h3>'{book.title}'</h3>
                             <p>genre: {book.genre}</p>
                             <button onClick={() => navigate(`/books/${book._id}`)}>details</button>
-                            <button onClick={() => currentUser.favBooks.push(book)}>add to favorites</button>
-                            <button onClick={() => currentUser.wantBooks.push(book)}>add to wishlist</button>
+                            <button onClick={() => {currentUser.favBooks.push(book); alert('added to favorites!')}}>add to favorites</button>
+                            <button onClick={() => {currentUser.wantBooks.push(book); alert('added to wishlist!')}}>add to wishlist</button>
                         </div>
                     ))
                 }
