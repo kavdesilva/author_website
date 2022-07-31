@@ -21,8 +21,6 @@ function App() {
   const [poetryBooks, setPoetryBooks] = useState([])
   const [fictionBooks, setFictionBooks] = useState([])
   const [user, setUser] = useState([])
-  // const [favBooks, setFavBooks] = useState([])
-  // const [wantBooks, setWantBooks] = useState([])
 
   useEffect(() => {
     async function getBooks() {
@@ -56,25 +54,6 @@ function App() {
     getUser()
   }, [])
 
-  // useEffect(() => {
-  //   async function getFavBooks() {
-  //       const res = await axios.get(`${BASE_URL}/user`)
-  //       setFavBooks(res.data.bookshelf.favBooks)
-  //   }
-  //   getFavBooks()
-  // }, [])
-
-  // useEffect(() => {
-  //   async function getWantBooks() {
-  //       const res = await axios.get(`${BASE_URL}/user`)
-  //       setWantBooks(res.data.bookshelf.wantBooks)
-  //   }
-  //   getWantBooks()
-  // }, [])
-
-  console.log(books)
-  console.log(user)
-
   return (
     <div className="App">
       <header className="header">
@@ -83,7 +62,7 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element= {<Home />} />
-          <Route path='/books' element= {<Books books={books} />} />
+          <Route path='/books' element= {<Books books={books} user={user}/>} />
           <Route path='/books/:id' element={<BookDetails />}/>
           <Route path='/books/poetry' element= {<Poetry poetryBooks={poetryBooks}/>} />
           <Route path='/books/fiction' element= {<Fiction fictionBooks={fictionBooks}/>} />

@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const Books = (props) => {
 
+    let currentUser = props.user[0]
     let navigate = useNavigate()
 
     return(
@@ -18,6 +19,8 @@ const Books = (props) => {
                             <h3>'{book.title}'</h3>
                             <p>genre: {book.genre}</p>
                             <button onClick={() => navigate(`/books/${book._id}`)}>details</button>
+                            <button onClick={() => currentUser.favBooks.push(book)}>add to favorites</button>
+                            <button onClick={() => currentUser.wantBooks.push(book)}>add to wishlist</button>
                         </div>
                     ))
                 }

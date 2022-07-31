@@ -16,9 +16,7 @@ router.get('/user', async(req,res) => {
   }
 })
 
-// router.get('/user/bookshelf', async(req,res) => {
-
-// })
+// router.get('/user/bookshelf', async(req,res) => { })
 
 // router.post('/user/bookshelf', controllers.addFavBook, controllers.addWantBook) // this probably has to be two different routes?
 
