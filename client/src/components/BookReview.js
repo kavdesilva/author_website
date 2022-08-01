@@ -17,14 +17,16 @@ const BookReview = (props) => {
 
     return(
         <div>
-            <form className="review-form" //</div>onSubmit={book.bookReviews.push()}
-            >
+            <form className="review-form">
                 <input type="text" 
                        name="username" 
                        placeholder="username" 
                        value={input} 
                        required />
-                <input type="text" name="review" placeholder="type your review here" value={input}required></input>
+                <input type="text" 
+                       name="review" 
+                       placeholder="type your review here" 
+                       value={input}required />
                 <button onClick={addReview}>submit</button>
             </form>
             <button onClick={seeReviews}>click to see reviews</button>
