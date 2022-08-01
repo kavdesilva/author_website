@@ -4,6 +4,7 @@ const Books = (props) => {
 
     let currentUser = props.user[0]
     let navigate = useNavigate()
+    console.log(props.books)
 
     return(
         <div>

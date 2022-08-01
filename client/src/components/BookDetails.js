@@ -6,7 +6,7 @@ import BookReview from './BookReview'
 
 const BookDetails = () => {
 
-    const [book, setBook] = useState('')
+    const [book, setBook] = useState([])
 
     let {id} = useParams()
 
@@ -18,8 +18,6 @@ const BookDetails = () => {
         getBook()
     }, [id])
 
-    console.log(book)
-
     return(
         <div>
             <div>
@@ -27,9 +25,8 @@ const BookDetails = () => {
                 <div className="book-container">
                     <p>published: {book.datePublished}</p>
                     <p>description: {book.description}</p>
-                    <button>add review</button>
                 </div>
-                <BookReview />
+                <BookReview book={book}/>
             </div>
         </div>
     )
