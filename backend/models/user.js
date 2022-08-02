@@ -7,7 +7,7 @@ const User = new Schema(
         email: { type: String, required: true },
         favBooks: [{ type: Schema.Types.ObjectId, ref: 'Book'}],
         wantBooks: [{ type: Schema.Types.ObjectId, ref: 'Book'}], 
-        reviews: [{ type: Scema.Types.ObjectId, ref: 'User'}]
+        reviews: [{ type: Schema.Types.ObjectId, ref: 'User'}]
     }
 )
 
