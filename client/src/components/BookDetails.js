@@ -7,7 +7,7 @@ import BookReview from './BookReview'
 const BookDetails = () => {
 
     const [book, setBook] = useState([])
-
+    let user = props.user
     let {id} = useParams()
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const BookDetails = () => {
                     <p>published: {book.datePublished}</p>
                     <p>description: {book.description}</p>
                 </div>
-                <BookReview book={book}/>
+                <BookReview book={book} user={user}/>
             </div>
         </div>
     )
