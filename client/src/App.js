@@ -68,8 +68,7 @@ function App() {
           <Route path='/books/poetry' element= {<Poetry poetryBooks={poetryBooks}/>} />
           <Route path='/books/fiction' element= {<Fiction fictionBooks={fictionBooks}/>} />
           <Route path='/about' element= {<About />} />
-          <Route path='/user/bookshelf' element= {<Bookshelf user={user}/>} />
-          <Route path='/user/:id' element= {<User />} />
+          <Route path='/user/:id/bookshelf' element= {<Bookshelf user={user}/>} />
         </Routes>
       </main>
     </div>
