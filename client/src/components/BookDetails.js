@@ -4,7 +4,7 @@ import axios from 'axios'
 import { BASE_URL } from '../globals'
 import BookReview from './BookReview'
 
-const BookDetails = () => {
+const BookDetails = (props) => {
 
     const [book, setBook] = useState([])
     let user = props.user
@@ -27,6 +27,14 @@ const BookDetails = () => {
                     <p>description: {book.description}</p>
                 </div>
                 <BookReview book={book} user={user}/>
+                <button onClick={seeReviews}>click to see reviews</button>
+                {
+                    reviews.map((review) => (
+                        <div key={user.username} className="review-card">
+                            <p><Link to="/user/:id">{user.username}</Link> says: <em>'{review.text}'</em></p>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )

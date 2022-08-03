@@ -31,14 +31,6 @@ const BookReview = (props) => {
                        value={input}required />
                 <button onClick={addReview}>submit</button>
             </form>
-            <button onClick={seeReviews}>click to see reviews</button>
-            {
-                reviews.map((review) => (
-                    <div key={user.username} className="review-card">
-                        <p><Link to="/user/:id">{user.username}</Link> says: <em>'{review.text}'</em></p>
-                    </div>
-                ))
-            }
         </div>
     )
 }
