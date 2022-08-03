@@ -35,24 +35,36 @@ const Bookshelf = (props) => {
                         </div>
                     ))
                 }
-            </div>
-            </div>
-            <div>
-                <h3>wishlist</h3>
-                <div className="want books-container">
-                {
-                    currentUser.wantBooks.map((book, index) => (
-                        <div key={book._id} className="book-card">
-                            <h3>'{book.title}'</h3>
-                            <p>published: {book.datePublished}</p>
-                            <p>description: {book.description}</p>
-                            <p>genre: {book.genre}</p>
-                            <button onClick={() => {currentUser.wantBooks.splice(index); confirmWantRemove()}}>remove</button>
-                            <button>add note</button>
-                        </div>
-                    ))
-                }
-            </div>
+                </div>
+                </div>
+                <div>
+                    <h3>wishlist</h3>
+                    <div className="want books-container">
+                    {
+                        currentUser.wantBooks.map((book, index) => (
+                            <div key={book._id} className="book-card">
+                                <h3>'{book.title}'</h3>
+                                <p>published: {book.datePublished}</p>
+                                <p>description: {book.description}</p>
+                                <p>genre: {book.genre}</p>
+                                <button onClick={() => {currentUser.wantBooks.splice(index); confirmWantRemove()}}>remove</button>
+                                <button>add note</button>
+                                <BookshelfNote />
+                            </div>
+                        ))
+                    }
+                </div>
+                <div className="user-reviews">
+                    {
+                        currentUser.reviews.map((review) => (
+                            <div key={review._id} className="review-card">
+                                <h3>'{review.username}':</h3>
+                                <p>{review.text}</p>
+                                <BookshelfNote />
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
         </div>
     )
