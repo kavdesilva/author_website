@@ -10,7 +10,9 @@ const main = async () => {
       password: 'password1',
       email: 'kristinaEmail@email.com',
       favBooks: [], 
-      wantBooks: []
+      wantBooks: [],
+      reviews: [],
+      bookshelfNotes: []
     }]
 
   await User.insertMany(users)

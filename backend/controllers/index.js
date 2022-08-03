@@ -43,4 +43,4 @@ const getWantBooks = () => {
   
 }
 
-module.exports = {getAllBooks}
+module.exports = {}

@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   res.send({ msg: 'server running' })
 })
 
-router.get('/user', async(req,res) => {
+router.get('/users', async(req,res) => {
   try {
     let users = await User.find({})
     res.send(users)
@@ -59,7 +59,7 @@ router.get('/books/:id', async(req,res) => {
   }
 })
 
-router.get('/user/:id', async(req,res) => {
+router.get('/users/:id', async(req,res) => {
   try {
     const { id } = req.params
     const user = await User.findById(id)
