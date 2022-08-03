@@ -21,7 +21,7 @@ function App() {
   const [books, setBooks] = useState([])
   const [poetryBooks, setPoetryBooks] = useState([])
   const [fictionBooks, setFictionBooks] = useState([])
-  const [user, setUser] = useState([])
+  const [users, setUsers] = useState([])
 
   useEffect(() => {
     async function getBooks() {
@@ -48,27 +48,30 @@ function App() {
   }, [])
 
   useEffect(() => {
-    async function getUser() {
-      const res = await axios.get(`${BASE_URL}/user`)
-      setUser(res.data)
+    async function getUsers() {
+      const res = await axios.get(`${BASE_URL}/users`)
+      setUsers(res.data)
     }
-    getUser()
+    getUsers()
   }, [])
+
+  let currentUser = users[0]
 
   return (
     <div className="App">
       <header className="header">
-        <Nav />
+        <Nav currentUser={currentUser}/>
       </header>
       <main>
         <Routes>
           <Route path='/' element= {<Home />} />
-          <Route path='/books' element= {<Books books={books} user={user}/>} />
-          <Route path='/books/:id' element={<BookDetails user={user}/>}/>
-          <Route path='/books/poetry' element= {<Poetry poetryBooks={poetryBooks}/>} />
-          <Route path='/books/fiction' element= {<Fiction fictionBooks={fictionBooks}/>} />
+          <Route path='/books' element= {<Books books={books} currentUser={currentUser}/>} />
+          <Route path='/books/:id' element={<BookDetails currentUser={currentUser}/>}/>
+          <Route path='/books/poetry' element= {<Poetry poetryBooks={poetryBooks} currentUser={currentUser}/>} />
+          <Route path='/books/fiction' element= {<Fiction fictionBooks={fictionBooks} currentUser={currentUser}/>} />
           <Route path='/about' element= {<About />} />
-          <Route path='/user/:id/bookshelf' element= {<Bookshelf user={user}/>} />
+          <Route path='/users/:id' element= {<User />} />
+          <Route path='/users/:id/bookshelf' element= {<Bookshelf currentUser={currentUser}/>} />
         </Routes>
       </main>
     </div>

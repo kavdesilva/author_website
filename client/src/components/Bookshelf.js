@@ -1,19 +1,18 @@
 import { useNavigate } from "react-router-dom"
 import BookshelfNote from "./BookshelfNote"
 
-const Bookshelf = (props) => {
+const Bookshelf = ({currentUser}) => {
 
-    let currentUser = props.user[0]
     let navigate = useNavigate()
 
     const confirmFavRemove = () => {
         window.confirm('are you sure you want to remove this book from your favorites?')
-        navigate('/user/bookshelf')
+        navigate(`/users/${currentUser?._id}/bookshelf`)
     }
 
     const confirmWantRemove = () => {
         window.confirm('are you sure you want to remove this book from your wishlist?')
-        navigate('/user/bookshelf')
+        navigate(`/users/${currentUser?._id}/bookshelf`)
     }
 
     return(
@@ -54,7 +53,7 @@ const Bookshelf = (props) => {
                 </div>
             </div>
             <div className="user-reviews">
-                <h3>{currentUser.username}</h3>
+                <h3>{currentUser.username}'s reviews</h3>
                 {
                     currentUser.reviews.map((review) => (
                         <div key={review._id} className="review-card">

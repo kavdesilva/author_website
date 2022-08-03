@@ -1,17 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const BookReview = (props) => {
-    const [reviews, setReviews] = useState([])
-    const [input, setInput] = useState('')
-    let bookReviews = props.book.bookReviews
-    let user = props.user
-    console.log(bookReviews)
-
-    const seeReviews = () => {
-        let array = [...bookReviews]
-        setReviews(array)
-    }
+const BookReviewForm = ({book, currentUser}) => {
 
     const addReview = () => {
         
@@ -19,12 +9,13 @@ const BookReview = (props) => {
 
     return(
         <div>
+            <h4>review of '{book.review}'</h4>
             <form className="review-form">
                 <input type="text" 
                        name="username"
                        placeholder="username" 
                        value={input} 
-                       required>{user.username}</input>
+                       required>{currentUser.username}</input>
                 <input type="text" 
                        name="review-text" 
                        placeholder="type your review here" 
@@ -35,4 +26,4 @@ const BookReview = (props) => {
     )
 }
 
-export default BookReview
+export default BookReviewForm

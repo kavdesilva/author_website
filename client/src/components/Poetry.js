@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 
-const Poetry = (props) => {
+const Poetry = ({poetryBooks, currentUser}) => {
 
     let navigate = useNavigate()
 
@@ -13,11 +13,13 @@ const Poetry = (props) => {
             </div>
             <div className="books-container">
                 {
-                    props.poetryBooks.map((book) => (
+                    poetryBooks.map((book) => (
                         <div key={book._id} className="book-card">
                             <h3>{book.title}</h3>
                             <p>genre: {book.genre}</p>
                             <button onClick={() => navigate(`/books/${book._id}`)}>details</button>
+                            <button onClick={() => {currentUser.favBooks.push(book); alert('added to favorites!')}}>add to favorites</button>
+                            <button onClick={() => {currentUser.wantBooks.push(book); alert('added to wishlist!')}}>add to wishlist</button>
                         </div>
                     ))
                 }

@@ -1,10 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom'
 
-const Books = (props) => {
+const Books = ({books, currentUser}) => {
 
-    let currentUser = props.user[0]
     let navigate = useNavigate()
-    console.log(props.books)
+    console.log(books)
 
     return(
         <div>
@@ -15,7 +14,7 @@ const Books = (props) => {
             </div>
             <div className="books-container">
                 {
-                    props.books.map((book) => (
+                    books.map((book) => (
                         <div key={book._id} className="book-card">
                             <h3>'{book.title}'</h3>
                             <p>genre: {book.genre}</p>

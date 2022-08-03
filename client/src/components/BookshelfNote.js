@@ -2,7 +2,7 @@ const BookshelfNote = () => {
 
     return(
         <div>
-            <form className="review-form">
+            {/* <form className="review-form">
                 <input type="text" 
                        name="username"
                        placeholder="username" 
@@ -13,7 +13,7 @@ const BookshelfNote = () => {
                        placeholder="type your review here" 
                        value={input}required />
                 <button onClick={addReview}>submit</button>
-            </form>
+            </form> */}
         </div>
     )
 }

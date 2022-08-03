@@ -2,14 +2,13 @@ import { useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from '../globals'
-import BookReview from './BookReview'
+import BookReviewForm from './BookReviewForm'
 
-const BookDetails = (props) => {
+const BookDetails = ({ currentUser }) => {
 
     const [book, setBook] = useState([])
-    let user = props.user
-    let {id} = useParams()
 
+    let {id} = useParams()
     useEffect(() => {
         async function getBook() {
             const res = await axios.get(`${BASE_URL}/books/${id}`)
@@ -19,23 +18,20 @@ const BookDetails = (props) => {
     }, [id])
 
     return(
-        <div>
-            <div>
-                <h2>'{book.title}'</h2>
-                <div className="book-container">
-                    <p>published: {book.datePublished}</p>
-                    <p>description: {book.description}</p>
-                </div>
-                <BookReview book={book} user={user}/>
-                <button onClick={seeReviews}>click to see reviews</button>
-                {
-                    reviews.map((review) => (
-                        <div key={user.username} className="review-card">
-                            <p><Link to="/user/:id">{user.username}</Link> says: <em>'{review.text}'</em></p>
-                        </div>
-                    ))
-                }
-            </div>
+        <div className="book-details-container">
+            <h2>'{book.title}'</h2>
+            <p>published: {book.datePublished}</p>
+            <p>description: {book.description}</p>
+
+            <BookReviewForm book={book} currentUser={currentUser}/>
+            {
+                book.bookReviews.map((review) => (
+                    <div key={review._id} className="review-card">
+                        <h4><Link to={`/user/${review.user._id}`}>{review.user.username}</Link> said:</h4>
+                        <p>'{review.text}'</p>
+                    </div>
+                ))
+            }
         </div>
     )
 
