@@ -43,12 +43,22 @@
 
 ***
 
+### *CHR/ERD*
+
+### Component Heirarchy Diagram (CHD)
+![Image](images/author_website_CHD.png)
+
+### Entity Relationship Diagram (ERD)
+![Image](images/author_website_EHR.png)
+
+***
+
 ### *Future Updates*
 - [x] README.md
 - [ ] Trello Board
 - [ ] Wireframes
-- [ ] ERD
-- [ ] CHD
+- [X] ERD
+- [X] CHD
 - [ ] Books Database
 - [ ] Pages (built w/ React)
 
