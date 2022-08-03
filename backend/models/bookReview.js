@@ -2,8 +2,8 @@ const { Schema } = require('mongoose')
 
 const BookReview = new Schema(
     {
-        book: { type: Schema.Types.ObjectId, ref: 'Book'},
-        username: { type: Schema.Types.ObjectId, ref: 'User' },
+        book: { type: Schema.Types.ObjectId, ref: 'Book', required: true },
+        username: { type: Schema.Types.ObjectId, ref: 'User', required: true },
         text: { type: String, required: true }
     },
     { timestamps: true }
