@@ -1,5 +1,5 @@
 import { useState, useEffect} from 'react'
-import { Link, useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from '../globals'
 import BookReviewForm from './BookReviewForm'
@@ -73,8 +73,9 @@ const BookDetails = ({ currentUser }) => {
                             reviewHandleChange={reviewHandleChange}
                             formState={formState}/>
             <div className='reviews-container'>
+                <h3>reviews</h3>
                 {(book?.bookReviews.length === 0) ? (
-                    <h3>sorry, no one has reviewed this book yet.</h3>
+                    <h4>sorry, no one has reviewed this book yet.</h4>
                 ):(
                     <div>
                         {

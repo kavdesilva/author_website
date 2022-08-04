@@ -19,6 +19,7 @@ function App() {
 // functions go here
 
   const [books, setBooks] = useState([])
+  const [book, setBook] = useState([])
   const [poetryBooks, setPoetryBooks] = useState([])
   const [fictionBooks, setFictionBooks] = useState([])
   const [users, setUsers] = useState([])

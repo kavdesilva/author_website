@@ -1,18 +1,8 @@
-import { useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
-import { BASE_URL } from '../globals'
 
 const Books = ({books, currentUser}) => {
 
     let navigate = useNavigate()
-
-    const addFavBook = () => {
-        // create post route in router using onclick function below in combination with axios call.
-    }
-    const addWantBook = () => {
-        // see above.
-    }
 
     return(
         <div>
