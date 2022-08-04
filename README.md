@@ -25,21 +25,7 @@
 ***
 
 ### *Trello Board*
-#### [project one - 'author website']
-
-***
-
-### *Wireframes*
-#### Home Page(url)
-![Image]()
-#### Author Page(url)
-![Image]()
-#### Books Page(url)
-![Image]()
-#### Book Details Page(url)
-![Image]()
-#### Bookshelf Page(url)
-![Image]()
+#### [project one - 'author website'](https://trello.com/b/MNbylibH/author-website)
 
 ***
 
@@ -55,11 +41,11 @@
 
 ### *Future Updates*
 - [x] README.md
-- [ ] Trello Board
+- [x] Trello Board
 - [ ] Wireframes
-- [X] ERD
-- [X] CHD
-- [ ] Books Database
+- [x] ERD
+- [x] CHD
+- [x] Books Database
 - [ ] Pages (built w/ React)
 
 ### *Post-MVP*
