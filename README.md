@@ -46,10 +46,11 @@
 - [x] ERD
 - [x] CHD
 - [x] Books Database
-- [ ] Pages (built w/ React)
+- [x] Pages (built w/ React)
+- [ ] Complete CRUD functionality
 
 ### *Post-MVP*
-- [x] TBD
+- [ ] TBD
 
 ***
 
