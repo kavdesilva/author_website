@@ -48,6 +48,7 @@
 - [x] Books Database
 - [x] Pages (built w/ React)
 - [ ] Complete CRUD functionality
+- [ ] Heroku Deployment
 
 ### *Post-MVP*
 - [ ] TBD
