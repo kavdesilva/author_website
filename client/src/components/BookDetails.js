@@ -48,7 +48,7 @@ const BookDetails = ({ currentUser }) => {
         book.bookReviews.splice(index)
         navigate(`/books/${book?._id}`)
     }
-    // ^^ while I can get addReview to work with the axios call and on the DOM, update, edit and delete are pretty non-functional no matter what I try.
+    // ^^ while I can get addReview to work with the axios call and on the DOM, update, edit and delete are pretty non-functional no matter what I try. axios call also will not take in the currentUser username as an argument, so I removed it from the addReview function.
 
     const reviewHandleSubmit = async (event, index) => {
         event.preventDefault()
