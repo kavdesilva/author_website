@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom"
-import BookshelfNote from "./BookshelfNote"
 
 const Bookshelf = ({currentUser}) => {
 
