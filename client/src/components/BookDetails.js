@@ -9,6 +9,7 @@ const BookDetails = ({ currentUser }) => {
     let navigate = useNavigate
     
     let initialFormState = {
+        user: '',
         title: '',
         text: '',
         rating: ''
@@ -16,7 +17,7 @@ const BookDetails = ({ currentUser }) => {
 
     const [book, setBook] = useState([])
     const [formState, setFormState] = useState(initialFormState)
-    const [editing, setEditing] = useState(false)
+    // const [editing, setEditing] = useState(false)
 
     let {id} = useParams()
     useEffect(() => {
@@ -28,24 +29,31 @@ const BookDetails = ({ currentUser }) => {
     }, [id])
 
     const addReview = async () => {
-        let res = await axios.post(`${BASE_URL}/books/${id}/reviews`, { ...formState, book: book._id, user: currentUser._id})
-        book.bookReviews.push(res.data)
+        // let res = await axios.post(`${BASE_URL}/books/${id}/reviews`, { ...formState, book: book._id, user: currentUser.username})
+        book.bookReviews.push(formState)
     }
 
-    const updateReview = async (index) => {
-        let res = await axios.post(`${BASE_URL}/books/${id}/reviews`, { ...formState._id, formState})
-        book.bookReviews.push(res.data)
+    // const updateReview = async (index) => {
+    //     let res = await axios.put(`${BASE_URL}/books/${id}/reviews`, { ...formState._id, formState})
+    //     book.bookReviews.push(formState)
+    // }
+
+    const editReview = (review, index) => {
+        setFormState(review)
+        navigate(`/books/${book._id}`, {state: {index: index}})
     }
+
+    const deleteReview = async (reviewId, index) => {
+        // await axios.delete(`${BASE_URL}/bookreviews/${reviewId}`)
+        book.bookReviews.splice(index)
+        navigate(`/books/${book?._id}`)
+    }
+    // ^^ while I can get addReview to work with the axios call and on the DOM, update, edit and delete are pretty non-functional no matter what I try.
 
     const reviewHandleSubmit = async (event, index) => {
         event.preventDefault()
-        if (editing === false) {
-            await addReview()
-        } else {
-            await updateReview(index)
-        }
+        await addReview(event)
         setFormState(initialFormState)
-        setEditing(false)
         navigate(`/books/${book?._id}`)
     }
 
@@ -65,15 +73,18 @@ const BookDetails = ({ currentUser }) => {
                             reviewHandleChange={reviewHandleChange}
                             formState={formState}/>
             <div className='reviews-container'>
-                {(book.bookReviews.length === 0) ? (
+                {(book?.bookReviews.length === 0) ? (
                     <h3>sorry, no one has reviewed this book yet.</h3>
                 ):(
                     <div>
                         {
-                            book.bookReviews.map((review) => (
+                            book?.bookReviews.map((review) => (
                                 <div key={review._id} className="review-card">
-                                    <h4><Link to={`/user/${review.user._id}`}>{review.user.username}</Link> said:</h4>
+                                    <h4>{review.user} said:</h4>
                                     <p>'{review.text}'</p>
+                                    <p>{review.rating}</p>
+                                    <button onClick={deleteReview}>delete</button>
+                                    <button onClick={editReview}>edit</button>
                                 </div>
                             ))
                         }

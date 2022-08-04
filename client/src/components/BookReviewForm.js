@@ -7,7 +7,13 @@ const BookReviewForm = ({book, currentUser, reviewHandleSubmit, reviewHandleChan
     return(
         <div>
             <h4>review '{book.title}':</h4>
-            <form onSubmit={(e) => reviewHandleSubmit(e, location.state.index)} className="review-form">
+            <form onSubmit={(e) => reviewHandleSubmit(e)} className="review-form">
+            <input value={formState.user}
+                       type="text" 
+                       name="user"
+                       placeholder="user"
+                       onChange={reviewHandleChange}
+                       required/>
                 <input value={formState.title}
                        type="text" 
                        name="title"
