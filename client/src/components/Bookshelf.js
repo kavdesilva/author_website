@@ -29,7 +29,6 @@ const Bookshelf = ({currentUser}) => {
                             <p>description: {book.description}</p>
                             <p>genre: {book.genre}</p>
                             <button onClick={() => {currentUser.favBooks.splice(index); confirmFavRemove()}}>remove</button>
-                            <BookshelfNote />
                         </div>
                     ))
                 }
@@ -46,7 +45,6 @@ const Bookshelf = ({currentUser}) => {
                             <p>description: {book.description}</p>
                             <p>genre: {book.genre}</p>
                             <button onClick={() => {currentUser.wantBooks.splice(index); confirmWantRemove()}}>remove</button>
-                            <BookshelfNote />
                         </div>
                     ))
                 }

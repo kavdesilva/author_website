@@ -1,5 +1,5 @@
 import { useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from '../globals'
 import BookReviewForm from './BookReviewForm'
@@ -20,7 +20,7 @@ const User = () => {
     return(
         <div className="user-details-container">
             {
-                book.bookReviews.map((review) => (
+                user.reviews.map((review) => (
                     <div key={review._id} className="review-card">
                         <h4>{review.user.username} reviewed <Link to={`/books/${review.book._id}`}>{review.book.title}</Link>:</h4>
                         <p>'{review.text}'</p>

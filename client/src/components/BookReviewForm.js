@@ -9,17 +9,14 @@ const BookReviewForm = ({book, currentUser}) => {
 
     return(
         <div>
-            <h4>review of '{book.review}'</h4>
+            <h4>review '{book.title}':</h4>
             <form className="review-form">
                 <input type="text" 
-                       name="username"
-                       placeholder="username" 
-                       value={input} 
-                       required>{currentUser.username}</input>
+                       name="subject"
+                       placeholder={"subject"}/>
                 <input type="text" 
                        name="review-text" 
-                       placeholder="type your review here" 
-                       value={input}required />
+                       placeholder="type your review here" />
                 <button onClick={addReview}>submit</button>
             </form>
         </div>

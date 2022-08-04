@@ -1,5 +1,5 @@
 import { useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from '../globals'
 import BookReviewForm from './BookReviewForm'
@@ -24,14 +24,14 @@ const BookDetails = ({ currentUser }) => {
             <p>description: {book.description}</p>
 
             <BookReviewForm book={book} currentUser={currentUser}/>
-            {
+            {/* {
                 book.bookReviews.map((review) => (
                     <div key={review._id} className="review-card">
                         <h4><Link to={`/user/${review.user._id}`}>{review.user.username}</Link> said:</h4>
                         <p>'{review.text}'</p>
                     </div>
                 ))
-            }
+            } */}
         </div>
     )
 
